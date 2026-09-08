@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Swarm — Demo demo2 — 213 Agents Live</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0f; color: #e0e0e0; min-height: 100vh; overflow-x: hidden; }
+  .bg { position: fixed; inset:0; background: radial-gradient(ellipse at 20% 20%, #1a1a2e 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, #16213e 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, #0f3460 0%, transparent 70%); z-index:-1; }
+  .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(30px) saturate(180%); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding: 16px 32px; margin: 16px; }
+  .logo { font-weight: 800; font-size: 20px; background: linear-gradient(90deg, #00FFFF, #9B59B6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero { text-align:center; padding: 80px 24px 40px; }
+  .hero h1 { font-size: 56px; font-weight: 900; line-height:1.1; background: linear-gradient(90deg, #00FFFF 0%, #9B59B6 50%, #E84393 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero p { margin-top:16px; font-size: 18px; opacity:0.7; max-width:640px; margin-left:auto; margin-right:auto; }
+  .stats { display:flex; gap:16px; justify-content:center; margin-top:32px; flex-wrap:wrap; }
+  .stat { padding: 16px 24px; min-width:140px; text-align:center; }
+  .stat b { display:block; font-size:28px; color:#00FFFF; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:16px; padding: 32px; max-width:1200px; margin:0 auto; }
+  .card { padding:20px; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+  .card:hover { transform: scale(1.03) translateY(-4px); border-color: rgba(0,255,255,0.3); }
+  .card h3 { font-size:16px; margin-bottom:8px; }
+  .card p { font-size:13px; opacity:0.6; line-height:1.5; }
+  .tag { display:inline-block; font-size:11px; padding:4px 8px; border-radius:999px; background: rgba(0,255,255,0.15); color:#00FFFF; margin-bottom:8px; }
+  .footer { text-align:center; padding:32px; opacity:0.5; font-size:13px; }
+  .magnetic { transition: transform 0.3s; }
+  .magnetic:hover { transform: scale(1.02); }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<nav class="nav glass magnetic">
+  <div class="logo">⬢ AGENCY SWARM</div>
+  <div style="opacity:0.6; font-size:13px;">213 agents • opencode 1.18.16 • agy 1.0.0 • claw 7.1.1</div>
+</nav>
+<section class="hero">
+  <h1>Your AI Agency<br>is Live</h1>
+  <p>Every agent you installed — from Frontend Wizards to Security Auditors — now swarms automatically. No slash needed for daily work, real slash commands for guaranteed splits.</p>
+  <div class="stats">
+    <div class="stat glass"><b>213</b> agents</div>
+    <div class="stat glass"><b>7</b> engines</div>
+    <div class="stat glass"><b>2</b> slash commands</div>
+    <div class="stat glass"><b>1</b> swarm hub</div>
+  </div>
+</section>
+<section class="grid">
+  <div class="card glass"><span class="tag">opencode</span><h3>Frontend Developer</h3><p>React / Vue / Tailwind, pixel-perfect, 60fps, WCAG AA. Handles src/**/*.tsx</p></div>
+  <div class="card glass"><span class="tag">codex</span><h3>Backend Architect</h3><p>Scalable APIs, microservices, DB design. Handles src/server/**, prisma/**</p></div>
+  <div class="card glass"><span class="tag">claude-code</span><h3>Security Architect</h3><p>Threat modeling, CSP/CORS, audit. Your guardrail.</p></div>
+  <div class="card glass"><span class="tag">antigravity</span><h3>UI Designer</h3><p>Design systems, glass morphism, premium feel.</p></div>
+  <div class="card glass"><span class="tag">opencode</span><h3>Agents Orchestrator</h3><p>PM → Architect → Dev↔QA → Integration. One command pipeline.</p></div>
+  <div class="card glass"><span class="tag">claw</span><h3>Council</h3><p>3 worktrees + voting consensus, durable runs, ledger.</p></div>
+</section>
+<div class="footer">Built by your swarm • Try natural language: "build me a landing page" in any IDE • Or slash: /claw-opencode-codex fix a bug in the user's login form (avoid " in prompt)<br>C:\Users\balur\.config\opencode\agents • C:\Users\balur\.gemini\config\skills • http://127.0.0.1:18796/login?token=802e83a...</div>
+<script>
+// Magnetic hover
+document.querySelectorAll('.magnetic').forEach(el=>{
+  el.addEventListener('mousemove', e=>{
+    const r=el.getBoundingClientRect(); el.style.transform=`perspective(600px) rotateY(${(e.clientX-r.left-r.width/2)/20}deg) rotateX(${-(e.clientY-r.top-r.height/2)/20}deg)`;
+  });
+  el.addEventListener('mouseleave', ()=> el.style.transform='');
+});
+</script>
+</body>
+</html>
+
